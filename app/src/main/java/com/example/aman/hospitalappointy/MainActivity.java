@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         nav_feedback.setVisible(true);
                         nav_BookedAppointment.setVisible(true);
 
-//                    Toast.makeText(MainActivity.this, status+" -"+Type, Toast.LENGTH_SHORT).show();
+
 
                         mUserDatabase.child("Doctor_Details").child(uid).addValueEventListener(new ValueEventListener() {
                             @Override

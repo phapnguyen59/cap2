@@ -23,7 +23,6 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
 
     private TextView mName, mEmail, mSpecialization, mExperiance, mAge, mContact, mAddress, mEducation;
     private Toolbar mToolbar;
-   // private Button mFinalUpdate;
     private String name,specialization,experiance,education,email,age,contact,address,update;
 
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -76,14 +75,31 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
             case R.id.edit_contact:
                 alertDialog(contact,"Contact");
                 break;
-
+            case R.id.final_update:
+                updateDoctorProfile();
+                break;
             default:
                 break;
         }
 
     }
 
+    private void updateDoctorProfile() {
 
+        String currentUser = mAuth.getCurrentUser().getUid().toString();
+
+        mDatabase.child(currentUser).child("Name").setValue(mName);
+        mDatabase.child(currentUser).child("Experiance").setValue(mExperiance);
+        mDatabase.child(currentUser).child("Education").setValue(mEducation);
+        mDatabase.child(currentUser).child("Address").setValue(mAddress);
+        mDatabase.child(currentUser).child("Contact").setValue(mContact);
+        mDatabase.child(currentUser).child("Age").setValue(mAge);
+
+        startActivity(new Intent(Doctor_EditProfileActivity.this,Doctor_ProfileActivity.class));
+
+
+
+    }
 
     private void alertDialog(String text, final String detail){
 
