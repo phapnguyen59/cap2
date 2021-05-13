@@ -7,27 +7,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Doctor_EditProfileActivity extends AppCompatActivity {
 
     private TextView mName, mEmail, mSpecialization, mExperiance, mAge, mContact, mAddress, mEducation;
     private Toolbar mToolbar;
-
+   // private Button mFinalUpdate;
     private String name,specialization,experiance,education,email,age,contact,address,update;
 
-    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Details");
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_doctor__edit_profile);
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.doctor_editProfile_toolbar);
@@ -45,23 +49,7 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
         mContact = (TextView) findViewById(R.id.edit_doctor_contact);
         mAddress = (TextView) findViewById(R.id.edit_doctor_address);
 
-        name = getIntent().getStringExtra("Name").toString();
-        specialization = getIntent().getStringExtra("Specialization").toString();
-        experiance = getIntent().getStringExtra("Experiance").toString();
-        education = getIntent().getStringExtra("Education").toString();
-        email = getIntent().getStringExtra("Email").toString();
-        age = getIntent().getStringExtra("Age").toString();
-        contact = getIntent().getStringExtra("Contact").toString();
-        address = getIntent().getStringExtra("Address").toString();
 
-        mName.setText(name);
-        mSpecialization.setText(specialization);
-        mExperiance.setText(experiance);
-        mEducation.setText(education);
-        mEmail.setText(email);
-        mAge.setText(age);
-        mContact.setText(contact);
-        mAddress.setText(address);
     }
 
     public void update(View view){
@@ -89,32 +77,13 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
                 alertDialog(contact,"Contact");
                 break;
 
-            case R.id.final_update:
-                updateDoctorProfile();
-                break;
-
             default:
                 break;
         }
 
     }
 
-    private void updateDoctorProfile() {
-        setContentView(R.layout.activity_doctor__edit_profile);
-        String currentUser = mAuth.getCurrentUser().getUid().toString();
 
-       mDatabase.child(currentUser).child("Name").setValue(name);
-       mDatabase.child(currentUser).child("Experiance").setValue(experiance);
-       mDatabase.child(currentUser).child("Education").setValue(education);
-       mDatabase.child(currentUser).child("Address").setValue(address);
-       mDatabase.child(currentUser).child("Contact").setValue(contact);
-       mDatabase.child(currentUser).child("Age").setValue(age);
-
-       startActivity(new Intent(Doctor_EditProfileActivity.this,Doctor_ProfileActivity.class));
-
-
-
-    }
 
     private void alertDialog(String text, final String detail){
 
@@ -166,9 +135,7 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
                     mContact.setText(update);
                     contact = mContact.getText().toString();
                 }
-                else {
 
-                }
 
             }
         });
@@ -176,6 +143,42 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mDatabase.child("Doctor_Details").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                name = dataSnapshot.child("Name").getValue().toString();
+                email = dataSnapshot.child("Email").getValue().toString();
+                contact = dataSnapshot.child("Contact").getValue().toString();
+                education = dataSnapshot.child("Education").getValue().toString();
+                specialization = dataSnapshot.child("Specialization").getValue().toString();
+                experiance = dataSnapshot.child("Experiance").getValue().toString();
+                age = dataSnapshot.child("Age").getValue().toString();
+                address = dataSnapshot.child("Address").getValue().toString();
+
+                mName.setText(name);
+                mSpecialization.setText(specialization);
+                mExperiance.setText(experiance);
+                mEducation.setText(education);
+                mEmail.setText(email);
+                mAge.setText(age);
+                mContact.setText(contact);
+                mAddress.setText(address);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
 }

@@ -61,24 +61,15 @@ public class Doctor_ProfileActivity extends AppCompatActivity {
         mEditProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_doctor__edit_profile);
+
                 Intent editProfile_Intent = new Intent(Doctor_ProfileActivity.this,Doctor_EditProfileActivity.class);
-
-                editProfile_Intent.putExtra("Name",name);
-                editProfile_Intent.putExtra("Specialization",specialization);
-                editProfile_Intent.putExtra("Experiance",experiance);
-                editProfile_Intent.putExtra("Education",education);
-                editProfile_Intent.putExtra("Email",email);
-                editProfile_Intent.putExtra("Age",age);
-                editProfile_Intent.putExtra("Contact",contact);
-                editProfile_Intent.putExtra("Address",address);
-
                 startActivity(editProfile_Intent);
 
             }
         });
 
     }
+
     private void alertDialogBox() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Doctor_ProfileActivity.this);
