@@ -87,13 +87,13 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
     private void updateDoctorProfile() {
 
         String currentUser = mAuth.getCurrentUser().getUid().toString();
-
-        mDatabase.child(currentUser).child("Name").setValue(mName);
-        mDatabase.child(currentUser).child("Experiance").setValue(mExperiance);
-        mDatabase.child(currentUser).child("Education").setValue(mEducation);
-        mDatabase.child(currentUser).child("Address").setValue(mAddress);
-        mDatabase.child(currentUser).child("Contact").setValue(mContact);
-        mDatabase.child(currentUser).child("Age").setValue(mAge);
+        //String uid =mAuth.getUid().toString();
+        mDatabase.child("Doctor_Details").child(currentUser).child("Name").setValue(name);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Experiance").setValue(experiance);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Education").setValue(education);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Address").setValue(address);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Contact").setValue(contact);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Age").setValue(age);
 
         startActivity(new Intent(Doctor_EditProfileActivity.this,Doctor_ProfileActivity.class));
 

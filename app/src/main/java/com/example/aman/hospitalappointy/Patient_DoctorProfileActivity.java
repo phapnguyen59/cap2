@@ -9,10 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import android.widget.TextView;git
 
 import java.util.Calendar;
 
@@ -24,7 +21,6 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
     private Button mBookAppointmentBtn;
     private Toolbar mToolbar;
 
-    private DatabaseReference mDatabase;
     private Calendar calendar;
     private DatePickerDialog datePickerDialog;
 
@@ -33,7 +29,6 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient__doctor_profile);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Details");
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.patient_doctorProfile_toolbar);
         setSupportActionBar(mToolbar);
@@ -79,5 +74,24 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        String name = getIntent().getStringExtra("Name").toString();
+        String education = getIntent().getStringExtra("Education").toString();
+        String specialization = getIntent().getStringExtra("Specialization").toString();
+        String experience = getIntent().getStringExtra("Experiance").toString();
+        String contact = getIntent().getStringExtra("Contact").toString();
+        shift = getIntent().getStringExtra("Shift").toString();
+
+        mName.setText(name);
+        mEducation.setText(education);
+        mSpecialization.setText(specialization);
+        mExperience.setText(experience);
+        mContactNo.setText(contact);
+        mShift.setText(shift);
     }
 }
