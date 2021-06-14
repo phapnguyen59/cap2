@@ -21,7 +21,7 @@
                 android:id="@+id/special_searchtxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search By Specialization"
+                android:hint="Tìm theo chuyên khoa"
                 android:inputType="textPersonName"
                 android:maxLength="20"
                 android:focusableInTouchMode="true"/>

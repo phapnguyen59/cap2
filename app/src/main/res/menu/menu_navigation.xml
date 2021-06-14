@@ -8,24 +8,32 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@mipmap/ic_home_black_24dp"
-            android:title="Profile" />
+            android:title="Thông tin tài khoản" />
         <item
             android:id="@+id/nav_showAppointment"
             android:icon="@mipmap/icon"
-            android:title="Show Appointment"/>
+
+            android:title="Lịch nhận"/>
         <item
             android:id="@+id/nav_bookedAppointment"
             android:icon="@mipmap/icon"
-            android:title="Booked Appointment"/>
+            android:title="Lịch đặt"/>
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@mipmap/icon"
+            android:title="Lịch sử khám" />
+        <item
+            android:id="@+id/nav_declare"
+            android:icon="@mipmap/list"
+            android:title="Khai báo y tế" />
         <item
             android:id="@+id/nav_login"
             android:icon="@mipmap/login"
-            android:title="Login (or Register)"/>
+            android:title="Đăng Nhập"/>
         <item
             android:id="@+id/nav_logout"
             android:icon="@mipmap/logout"
-            android:title="Log Out"/>
-
+            android:title="Đăng xuất"/>
 
         </group>
 

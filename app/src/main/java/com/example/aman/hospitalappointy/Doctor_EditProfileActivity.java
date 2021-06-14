@@ -7,9 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -24,6 +28,9 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
     private TextView mName, mEmail, mSpecialization, mExperiance, mAge, mContact, mAddress, mEducation;
     private Toolbar mToolbar;
     private String name,specialization,experiance,education,email,age,contact,address,update;
+    private RadioGroup mshift;
+    private String shift="" ;
+
 
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -35,7 +42,7 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.doctor_editProfile_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Edit Profile");
+        getSupportActionBar().setTitle("Chỉnh sửa thông tin");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -47,6 +54,8 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
         mAge = (TextView) findViewById(R.id.edit_doctor_age);
         mContact = (TextView) findViewById(R.id.edit_doctor_contact);
         mAddress = (TextView) findViewById(R.id.edit_doctor_address);
+
+
 
 
     }
@@ -86,14 +95,24 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
 
     private void updateDoctorProfile() {
 
+        mshift = (RadioGroup) findViewById(R.id.Shift);
+        int checkedId = mshift.getCheckedRadioButtonId();
+
+        if(checkedId == R.id.morning_radiobtn){
+            shift = "Morning";
+        }
+        else if(checkedId == R.id.evening_radiobtn){
+            shift = "Evening";
+        }
         String currentUser = mAuth.getCurrentUser().getUid().toString();
-        //String uid =mAuth.getUid().toString();
+
         mDatabase.child("Doctor_Details").child(currentUser).child("Name").setValue(name);
         mDatabase.child("Doctor_Details").child(currentUser).child("Experiance").setValue(experiance);
         mDatabase.child("Doctor_Details").child(currentUser).child("Education").setValue(education);
         mDatabase.child("Doctor_Details").child(currentUser).child("Address").setValue(address);
         mDatabase.child("Doctor_Details").child(currentUser).child("Contact").setValue(contact);
         mDatabase.child("Doctor_Details").child(currentUser).child("Age").setValue(age);
+        mDatabase.child("Doctor_Details").child(currentUser).child("Shift").setValue(shift);
 
         startActivity(new Intent(Doctor_EditProfileActivity.this,Doctor_ProfileActivity.class));
 
@@ -177,6 +196,7 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
                 age = dataSnapshot.child("Age").getValue().toString();
                 address = dataSnapshot.child("Address").getValue().toString();
 
+
                 mName.setText(name);
                 mSpecialization.setText(specialization);
                 mExperiance.setText(experiance);
@@ -185,6 +205,7 @@ public class Doctor_EditProfileActivity extends AppCompatActivity {
                 mAge.setText(age);
                 mContact.setText(contact);
                 mAddress.setText(address);
+
 
             }
 

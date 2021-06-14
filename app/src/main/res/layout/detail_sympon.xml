@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.example.aman.hospitalappointy.Detail_sympon">
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue"
+        android:text="Tên bệnh nhân"
+        >
+
+    </TextView>
+    <TextView
+
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+
+        android:background="@drawable/custom">
+
+    </TextView>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:text="Triệu chứng"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_sympon"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom">
+    </TextView>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:text="Chuẩn đoán"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_benh"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom">
+
+    </EditText>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:text="Toa thuốc"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_toa"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_cancel"
+        android:text="Hủy lịch">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_background"
+        android:text="Xong">
+
+    </Button>
+
+</LinearLayout>

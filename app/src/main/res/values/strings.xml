@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hospital Appointy</string>
+    <string name="app_name">Doctor clinic</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="copy_right" translatable="false">Copyrights © %1$d</string>

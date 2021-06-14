@@ -9,13 +9,13 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;git
+import android.widget.TextView;
 
 import java.util.Calendar;
 
 public class Patient_DoctorProfileActivity extends AppCompatActivity {
 
-    private TextView mName, mEducation, mSpecialization, mExperience, mContactNo, mShift;
+    private TextView mName, mEducation, mSpecialization, mExperience, mContactNo, mShift,mAddress;
     private String shift;
 
     private Button mBookAppointmentBtn;
@@ -32,7 +32,7 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.patient_doctorProfile_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Doctor Profile");
+        getSupportActionBar().setTitle("Thông tin bác sĩ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mName = (TextView) findViewById(R.id.patient_doctorProfile_name);
@@ -41,6 +41,7 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
         mExperience = (TextView) findViewById(R.id.patient_doctorProfile_experiance);
         mContactNo = (TextView) findViewById(R.id.patient_doctorProfile_contact);
         mShift = (TextView) findViewById(R.id.patient_doctorProfile_shift);
+        mAddress = (TextView)findViewById(R.id.patient_doctorProfile_address);
 
         mBookAppointmentBtn = (Button) findViewById(R.id.book_appointment_button);
         mBookAppointmentBtn.setOnClickListener(new View.OnClickListener() {
@@ -59,13 +60,14 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
                         String userId = getIntent().getStringExtra("UserId").toString();
 
                         String date = dayOfMonth +"-"+ (month+1) +"-"+ year;
-//                        Toast.makeText(Patient_DoctorProfileActivity.this, date , Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Patient_DoctorProfileActivity.this, Patient_BookAppointmentActivity.class);
                         intent.putExtra("Date",date);
                         intent.putExtra("DoctorUserId",userId);
                         intent.putExtra("Shift",shift);
+
                         startActivity(intent);
+
                     }
                 },day,month,year);
                 datePickerDialog.updateDate(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
@@ -85,6 +87,7 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
         String specialization = getIntent().getStringExtra("Specialization").toString();
         String experience = getIntent().getStringExtra("Experiance").toString();
         String contact = getIntent().getStringExtra("Contact").toString();
+        String address =getIntent().getStringExtra("Address").toString();
         shift = getIntent().getStringExtra("Shift").toString();
 
         mName.setText(name);
@@ -92,6 +95,7 @@ public class Patient_DoctorProfileActivity extends AppCompatActivity {
         mSpecialization.setText(specialization);
         mExperience.setText(experience);
         mContactNo.setText(contact);
+        mAddress.setText(address);
         mShift.setText(shift);
     }
 }

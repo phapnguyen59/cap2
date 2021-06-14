@@ -10,6 +10,9 @@ public class BookedAppointmentList {
     private String Time;
     private String Doctor_ID;
     private String PatientID;
+    private String Sympon;
+
+
 
     public BookedAppointmentList() {
     }
@@ -19,6 +22,17 @@ public class BookedAppointmentList {
         this.Time = time;
         this.Doctor_ID = doctor_ID;
         this.PatientID = patientID;
+    }
+    public String getSympon() {
+        return Sympon;
+    }
+
+    public void setSympon(String sympon) {
+        Sympon = sympon;
+    }
+
+    public BookedAppointmentList(String sympon) {
+        Sympon = sympon;
     }
 
     public String getDate() {

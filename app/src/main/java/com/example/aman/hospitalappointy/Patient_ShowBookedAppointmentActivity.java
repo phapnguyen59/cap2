@@ -44,7 +44,7 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.show_bookedAppointment);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Booked Appointments");
+        getSupportActionBar().setTitle("Lịch đặt");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.show_Appointment_recyclerView);
@@ -64,7 +64,7 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
                 .build();
 
         FirebaseRecyclerAdapter<BookedAppointmentList, BookedAppointmentsVH> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<BookedAppointmentList, BookedAppointmentsVH>(firebaseRecyclerOptions){
+                    new FirebaseRecyclerAdapter<BookedAppointmentList, BookedAppointmentsVH>(firebaseRecyclerOptions){
 
                     @Override
                     public BookedAppointmentsVH onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -72,6 +72,7 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
                         View view = LayoutInflater.from(parent.getContext())
                                 .inflate(R.layout.single_booked_appointment,parent,false);
                         return new BookedAppointmentsVH(view);
+
                     }
 
                     @Override
@@ -81,15 +82,10 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 doctorID = model.getDoctor_ID().toString();
-
                                 BookedAPKey = getRef(position).getKey().toString();
-//                                Toast.makeText(Patient_ShowBookedAppointmentActivity.this, "Key = "+BookedAPKey, Toast.LENGTH_SHORT).show();
-
                                 Appointment_date = model.getDate();
                                 Appointment_time = model.getTime();
                                 changeSlotToTime(Appointment_time);
-//                                Toast.makeText(Patient_ShowBookedAppointmentActivity.this,"Doctor - "+doctorID, Toast.LENGTH_SHORT).show();
-
                                 alertDialog();
 
                             }
@@ -128,10 +124,6 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-//                Toast.makeText(Patient_ShowBookedAppointmentActivity.this, Appointment_date, Toast.LENGTH_SHORT).show();
-//                Toast.makeText(Patient_ShowBookedAppointmentActivity.this, "KEY = "+BookedAPKey, Toast.LENGTH_SHORT).show();
-//                Toast.makeText(Patient_ShowBookedAppointmentActivity.this, "Slot = "+slot, Toast.LENGTH_SHORT).show();
-
                 mDatabase.child("Appointment").child(doctorID).child(Appointment_date).child(slot).removeValue();
                 mDatabase.child("Booked_Appointments").child(currentUID).child(BookedAPKey).removeValue();
                 onStart();
@@ -195,92 +187,128 @@ public class Patient_ShowBookedAppointmentActivity extends AppCompatActivity {
             case "08:00 AM":
                 slot = "1";
                 break;
-            case "08:20 AM":
+            case "08:10 AM":
                 slot = "2";
                 break;
-            case "08:40 AM":
+            case "08:20 AM":
                 slot = "3";
                 break;
-            case "09:00 AM":
+            case "08:30 AM":
                 slot = "4";
                 break;
-            case "09:20 AM":
+            case "08:40 AM":
                 slot = "5";
                 break;
-            case "09:40 AM":
+            case "08:50 AM":
                 slot = "6";
                 break;
-            case "10:00 AM":
+            case "09:00 AM":
                 slot = "7";
                 break;
-            case "10:20 AM":
+            case "09:10 AM":
                 slot = "8";
                 break;
-            case "10:40 AM":
+            case "09:20 AM":
                 slot = "9";
                 break;
-            case "11:00 AM":
+            case "09:30 AM":
                 slot = "10";
                 break;
-            case "11:20 AM":
+            case "09:40 AM":
                 slot = "11";
                 break;
-            case "11:40 AM":
+            case "09:50 AM":
                 slot = "12";
                 break;
-            case "02:00 PM":
+            case "10:00 AM":
                 slot = "13";
                 break;
-            case "02:20 PM":
+            case "10:10 AM":
                 slot = "14";
                 break;
-            case "02:40 PM":
+            case "10:20 AM":
                 slot = "15";
                 break;
-            case "03:00 PM":
+            case "10:30 AM":
                 slot = "16";
                 break;
-            case "03:20 PM":
+            case "10:40 AM":
                 slot = "17";
                 break;
-            case "03:40 PM":
+            case "10:50 AM":
                 slot = "18";
                 break;
-            case "04:00 PM":
+            case "11:00 AM":
                 slot = "19";
                 break;
-            case "04:20 PM":
+            case "11:10 AM":
                 slot = "20";
                 break;
-            case "04:40 PM":
+            case "11:20 AM":
                 slot = "21";
                 break;
-            case "05:00 PM":
+            case "02:00 PM":
                 slot = "22";
                 break;
-            case "05:20 PM":
+            case "02:10 PM":
                 slot = "23";
                 break;
-            case "05:40 PM":
+            case "02:20 PM":
                 slot = "24";
                 break;
-            case "06:00 PM":
+            case "02:30 PM":
                 slot = "25";
                 break;
-            case "06:20 PM":
+            case "02:40 PM":
                 slot = "26";
                 break;
-            case "06:40 PM":
+            case "02:50 PM":
                 slot = "27";
                 break;
-            case "09:00 PM":
+            case "03:00 PM":
                 slot = "28";
                 break;
-            case "09:20 PM":
+            case "03:10 PM":
                 slot = "29";
                 break;
-            case "09:40 PM":
+            case "03:20 PM":
                 slot = "30";
+                break;
+            case "03:30 PM":
+                slot = "31";
+                break;
+            case "03:40 PM":
+                slot = "32";
+                break;
+            case "03:50 PM":
+                slot = "33";
+                break;
+            case "04:00 PM":
+                slot = "34";
+                break;
+            case "04:10 PM":
+                slot = "35";
+                break;
+            case "04:20 PM":
+                slot = "36";
+                break;
+            case "04:30 PM":
+                slot = "37";
+                break;
+            case "04:40 PM":
+                slot = "38";
+                break;
+            case "04:50 PM":
+                slot = "39";
+                break;
+            case "05:00 PM":
+                slot = "40";
+                break;
+            case "05:10 PM":
+                slot = "41";
+                break;
+            case "05:20 PM":
+                slot = "42";
                 break;
 
             default:

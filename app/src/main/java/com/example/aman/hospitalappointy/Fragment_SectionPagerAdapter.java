@@ -40,11 +40,11 @@ public class Fragment_SectionPagerAdapter extends FragmentPagerAdapter{
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return "SPECIALIZATION";
+                return "CHUYÊN KHOA";
             case 1:
-                return "DOCTOR";
+                return "BÁC SĨ";
             case 2:
-                return "DATE";
+                return "NGÀY";
 
             default:
                 return null;

@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.aman.hospitalappointy.DeclareActivity">
+
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/register_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Họ và tên"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/name_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="CMT/CCCD/PASSPORT"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp"></TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/passport_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Năm sinh"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/born_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Giới tính"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/sex_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Quốc tịch"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:ccp_defaultLanguage="VIETNAMESE"
+                    app:ccp_defaultNameCode="VN"
+                    app:ccp_showPhoneCode="false" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Tỉnh/Thành phố"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/city_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Quận/Huyện"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/district_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Thị trấn/xã/phường"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/town_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Thôn/Tổ dân phố/Số nhà"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/village_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Số điện thoại"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/phone_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Email"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/email_declare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></EditText>
+
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Lịch trình duy chuyển của Anh/Chị trong 14 ngày qua"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/trip_declare"
+                    android:layout_width="400dp"
+                    android:layout_height="137dp"></EditText>
+
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Anh/Chị trong 14 ngày qua có thấy triệu chứng nào sau đây"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="sốt"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/sot_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/sot1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Có" />
+
+                    <RadioButton
+                        android:id="@+id/sot2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="ho"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/ho_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/ho1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/ho2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="khó thở"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/khotho_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/khotho1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/khotho2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="viêm phổi"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/viemphoi_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/viemphoi1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/kviemphoi2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="đau họng"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/dauhong_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/dauhong1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/dauhong2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="mệt mỏi"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/metmoi_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/metmoi1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/metmoi2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Anh/Chị trong 14 có tiếp xúc với"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="trường hợp nghi nhiễm hoặc nhiễm covid-19"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/truong_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/truong1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Có" />
+
+                    <RadioButton
+                        android:id="@+id/truong2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="đi về từ vùng dịch"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/di_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/di1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/di2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="tiếp xúc với người về từ vùng dịch"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/tiep_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/tiep1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/tiep2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:hint="Anh/Chị hiện tại có bệnh nào dưới đây"
+                android:textColorHint="@color/about_instagram_color"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="bệnh gan mãn tính"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gan_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/gan1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Có" />
+
+                    <RadioButton
+                        android:id="@+id/gan2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="bệnh máu mãn tính"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/mau_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mau1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/mau2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="bệnh thận mãn tính"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/than_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/than1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/than2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="bệnh tim mạch"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/tim_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/tim1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Có" />
+
+                    <RadioButton
+                        android:id="@+id/tim2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="huyết áp cao"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/cao_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cao1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/cao2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="suy giảm miễn dịch"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/suy_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/suy1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/suy2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="người nhận ghép tạng,tủy xương"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/nguoi_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/nguoi1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/nguoi2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="tiểu đường"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/tieu_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/tieu1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/tieu2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="ung thư"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/ung_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/ung1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/ung2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="đang trong thai kỳ"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/dang_radiogroup"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/dang1_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="có" />
+
+                    <RadioButton
+                        android:id="@+id/dang2_radiobtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:text="không" />
+
+                </RadioGroup>
+
+            </TableRow>
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:text="SUBMIT"
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+                </Button>
+
+        </TableLayout>
+
+    </ScrollView>
+</LinearLayout>

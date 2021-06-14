@@ -33,7 +33,7 @@ public class Forgot_PasswordActivity extends AppCompatActivity {
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.forgot_password_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Reset Password");
+        getSupportActionBar().setTitle("Đổi mật khẩu");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

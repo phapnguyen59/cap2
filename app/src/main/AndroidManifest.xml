@@ -64,6 +64,17 @@
         <activity android:name=".FeedbackActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".DeclareActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Detail_sympon"
+            android:parentActivityName=".Doctor_ShowAppointmentActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Historysick"
+            android:screenOrientation="portrait"/>
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

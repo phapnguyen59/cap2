@@ -41,7 +41,7 @@ public class Fragment_Specialization extends Fragment {
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     public Fragment_Specialization(){
-        //Required Empty public constructor otherwise app will crash
+
     }
 
     @Nullable
@@ -50,6 +50,10 @@ public class Fragment_Specialization extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_specialization,container,false);
 
+        mRecylerView=(RecyclerView) rootView.findViewById(R.id.specialization_recyclerView);
+        mRecylerView.setHasFixedSize(true);
+        mRecylerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+
         mSearch = (TextInputLayout) rootView.findViewById(R.id.search_by_specialization);
         searchtext = (EditText) rootView.findViewById(R.id.special_searchtxt);
 
@@ -57,6 +61,7 @@ public class Fragment_Specialization extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 onStart();
+
             }
 
             @Override
@@ -69,10 +74,6 @@ public class Fragment_Specialization extends Fragment {
                 onStart();
             }
         });
-
-        mRecylerView = (RecyclerView) rootView.findViewById(R.id.specialization_recyclerView);
-        mRecylerView.setHasFixedSize(true);
-        mRecylerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
         return rootView;
     }
@@ -95,7 +96,6 @@ public class Fragment_Specialization extends Fragment {
                     @Override
                     protected void onBindViewHolder(@NonNull final SpecializationViewHolder holder, final int position, @NonNull final BookedAppointmentList model) {
 
-//                        final String doctorID = model.getDoctor_ID().toString();
                         final String Special = getRef(position).getKey().toString();
                         holder.setSpecialization(Special);
 
@@ -174,6 +174,13 @@ public class Fragment_Specialization extends Fragment {
                                     @Override
                                     public void onClick(View v) {
                                         Intent intent = new Intent(getContext(),Patient_DoctorProfileActivity.class);
+                                        intent.putExtra("Name",doctorName);
+                                        intent.putExtra("Specialization",specialization);
+                                        intent.putExtra("Contact",contact);
+                                        intent.putExtra("Experiance",experience);
+                                        intent.putExtra("Education",education);
+                                        intent.putExtra("Shift",shift);
+                                        intent.putExtra("UserId",doctorID);
                                         startActivity(intent);
                                     }
                                 });
@@ -200,8 +207,7 @@ public class Fragment_Specialization extends Fragment {
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
 
-//        Window window = dialog.getWindow();
-//        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
     }
 
     public class SpecializationVH extends RecyclerView.ViewHolder {
@@ -226,7 +232,7 @@ public class Fragment_Specialization extends Fragment {
     }
 
 
-    public class SpecializationViewHolder extends RecyclerView.ViewHolder {
+    public class SpecializationViewHolder extends RecyclerView.ViewHolder     {
 
         View mView;
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="291dp"
+    android:orientation="vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/custom"
+    >
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue"
+        android:text="Bác sĩ"
+        >
+
+    </TextView>
+    <TextView
+
+        android:id="@+id/text_namedoctor"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="30dp"
+        android:hint="abc"
+        >
+
+    </TextView>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:text="Bệnh"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_sick"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="50dp"
+        android:hint="abc"
+        >
+    </TextView>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:text="Đơn thuốc"
+        android:fontFamily="@font/audiowide"
+        android:textColor="@color/skyBlue">
+
+    </TextView>
+    <TextView
+        android:id="@+id/text_donthuoc"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:hint="abc"
+        android:layout_marginRight="5dp"
+        android:layout_height="100dp"
+        >
+
+    </TextView>
+
+
+</LinearLayout>

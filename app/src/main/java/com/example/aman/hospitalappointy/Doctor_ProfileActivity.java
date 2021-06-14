@@ -44,7 +44,7 @@ public class Doctor_ProfileActivity extends AppCompatActivity {
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.doctor_profile_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("Thông tin cá nhân");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

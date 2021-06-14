@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class Patient_RegistrationActivity extends AppCompatActivity {
+public class  Patient_RegistrationActivity extends AppCompatActivity {
 
     private TextInputLayout mName;
     private TextInputLayout mAge;
@@ -58,7 +58,7 @@ public class Patient_RegistrationActivity extends AppCompatActivity {
         // Toolbar
         mToolbar = (Toolbar) findViewById(R.id.register_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Patient Registration");
+        getSupportActionBar().setTitle("Đăng ký");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mRegProgress = new ProgressDialog(this);
@@ -73,10 +73,8 @@ public class Patient_RegistrationActivity extends AppCompatActivity {
 
         mEmail = (TextInputLayout) findViewById(R.id.reg_email_layout);
         mPassword = (TextInputLayout) findViewById(R.id.reg_password_layout);
+
         mRegister = (Button) findViewById(R.id.reg_button);
-
-
-
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

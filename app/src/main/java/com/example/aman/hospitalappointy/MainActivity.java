@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Hospital Appointy");
+        getSupportActionBar().setTitle("Doctor Clinic");
 
         //DrawerLayout and ToggleButton
         mDrawerLayout = findViewById(R.id.main_drawerLayout);
@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.nav_showAppointment);
         final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.nav_bookedAppointment);
         final MenuItem nav_feedback = menuNav.findItem(R.id.nav_feedback);
+        final MenuItem nav_declare = menuNav.findItem(R.id.nav_declare);
+        final MenuItem nav_history = menuNav.findItem(R.id.nav_history);
+
         MenuItem nav_logOut = menuNav.findItem(R.id.nav_logout);
         MenuItem nav_logIn = menuNav.findItem(R.id.nav_login);
 
@@ -98,6 +101,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_logIn.setVisible(false);
         nav_logOut.setVisible(false);
         nav_feedback.setVisible(false);
+        nav_declare.setVisible(false);
+        nav_history.setVisible(false);
+
 
 
 
@@ -126,11 +132,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.nav_showAppointment);
         final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.nav_bookedAppointment);
         final MenuItem nav_feedback = menuNav.findItem(R.id.nav_feedback);
+        final MenuItem nav_declare = menuNav.findItem(R.id.nav_declare);
+        final MenuItem nav_history = menuNav.findItem(R.id.nav_history);
 
         nav_profile.setVisible(false);
         nav_ShowAppointment.setVisible(false);
         nav_BookedAppointment.setVisible(false);
         nav_feedback.setVisible(false);
+        nav_declare.setVisible(false);
+        nav_history.setVisible(false);
 
         final String uid = mAuth.getUid().toString();
 
@@ -144,7 +154,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(Type.equals("Patient")){
 
                     nav_BookedAppointment.setVisible(true);
+                    nav_history.setVisible(true);
                     nav_feedback.setVisible(true);
+                    nav_declare.setVisible(true);
+
 
 
                     mUserDatabase.child("Patient_Details").child(uid).addValueEventListener(new ValueEventListener() {
@@ -176,6 +189,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         nav_ShowAppointment.setVisible(true);
                         nav_feedback.setVisible(true);
                         nav_BookedAppointment.setVisible(true);
+                        nav_declare.setVisible(true);
+                        nav_history.setVisible(true);
 
 
 
@@ -261,17 +276,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
                 onStart();
-
                 Toast.makeText(getBaseContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
                 break;
 
             case R.id.nav_feedback:
-//                Toast.makeText(getBaseContext(),"Feedback Clicked",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getApplicationContext(),FeedbackActivity.class));
-                break;
 
-            default:
+                Intent feedback_Intent = new Intent(getApplicationContext(), FeedbackActivity.class);
+                startActivity(feedback_Intent);
                 break;
+            case R.id.nav_declare:
+
+                Intent declare_Intent = new Intent(getApplicationContext(), DeclareActivity.class);
+                startActivity(declare_Intent);
+                break;
+            case R.id.nav_history:
+
+                Intent history_Intent = new Intent(getApplicationContext(), Historysick.class);
+                startActivity(history_Intent);
+                break;
+            default:
+
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
